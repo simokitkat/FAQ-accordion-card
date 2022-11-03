@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    min-height: calc(100vh - 14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+}
+
+@media (max-width: 1100px) {
+    main {
+        padding-top: 165px;
+        padding-bottom: 150px;
+    }
+}
+
+.container {
+    background-color: white;
+    width: 1000px;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 1px 15px 50px -30px black;
+    position: relative;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 80%;
+        width: 90%;
+        height: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+    }
+}
+
+
+.images {
+    width: 45%;
+    height: 100%;
+    background-image: url(images/illustration-woman-online-desktop.svg), url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 350% 40%, 110% 75%;
+    position: relative;
+}
+
+@media (max-width: 1100px) {
+    .images {
+        display: none;
+    }
+}
+
+.images img {
+    position: absolute;
+    left: -90px;
+    top: 215px;
+    animation-name: jumbing-box;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+}
+
+@keyframes jumbing-box {
+    0% {
+        top: 215px;
+    }
+
+    50% {
+        top: 205px;
+    }
+
+    100% {
+        top: 215px;
+    }
+}
+
+/********************************
+*** Images for Mobile section ***
+*********************************/
+.images-mobile {
+    margin: auto;
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .images-mobile {
+        display: block;
+    }
+}
+
+.div-for-images {
+    margin: auto;
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+.images-mobile img[alt="illustration-woman-online-mobile"] {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: -150px;
+    left: 0;
+}
+
+.images-mobile img[alt="bg-pattern-mobile"] {
+    position: absolute;
+    width: inherit;
+    left: 0;
+    top: 20px;
+}
+
+@media (max-width: 500px) {
+    .div-for-images {
+        width: 300px;
+        height: 225px
+    }
+
+    .images-mobile img[alt="illustration-woman-online-mobile"] {
+        top: -112.5px;
+    }
+}
+
+.text {
+    width: 55%;
+    height: 100%;
+    padding: 40px 100px 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media (max-width: 1100px) {
+    .text {
+        width: 80%;
+        padding: 50px 0 75px;
+        margin: auto;
+    }
+}
+
+.text h1 {
+    font-size: 2rem;
+    color: hsl(238, 29%, 16%);
+}
+
+@media (max-width: 1100px) {
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+ul {
+    height: 80%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text li {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.text .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question h2 {
+    color: hsl(237, 12%, 33%);
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.question:hover h2 {
+    color: hsl(14, 88%, 65%);
+}
+
+.question img[alt="icon-arrow-down"] {
+    transition: 0.3s;
+}
+
+li p {
+    margin-top: 10px;
+    height: 0;
+    color: hsl(240, 6%, 50%);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* After JS Click Events*/
+.question.active+p {
+    height: 30px;
+}
+
+.question.active h2 {
+    font-weight: 700;
+    color: hsl(237, 12%, 33%);
+}
+
+.question.active img[alt="icon-arrow-down"] {
+    transform: rotate(0.5turn);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(238, 29%, 16%);
+}
