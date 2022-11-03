@@ -1,1 +1,1 @@
-# FAQ-accordion-card
+<https://simokitkat.github.io/FAQ-accordion-card/>
