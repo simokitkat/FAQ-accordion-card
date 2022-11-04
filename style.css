@@ -239,6 +239,13 @@ li p {
     text-align: center;
 }
 
+
+@media (max-width: 350px) {
+    .attribution {
+        display: none;
+    }
+}
+
 .attribution a {
     color: hsl(238, 29%, 16%);
 }
